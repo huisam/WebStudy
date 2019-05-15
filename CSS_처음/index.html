@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+body {
+	background: #cccccc;
+}
+
+header {
+	padding: 20px;
+	margin-left: 10px;
+	font-family: 궁서체;
+}
+
+nav {
+	background-color: black;
+}
+
+nav ul li {
+	padding: 10px 20px;
+	margin: 20px;
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: gray;
+}
+
+#limovie {
+	color: white;
+}
+
+#lirss {
+	list-style-image: url("../0211_img/img/rss.png");
+}
+
+.title {
+	margin-left: 40px;
+	background-color: green;
+	color: white;
+	border-radius: 10px;
+}
+
+.title_left {
+	margin: 20px;
+	float: left;
+	width: 200px;
+	font-family: "맑은 고딕";
+}
+
+.kungfoo {
+	float: right;
+}
+
+table {
+	font-style: italic;
+	color: gray;
+	text-decoration: none;
+}
+
+table tbody tr td {
+	padding: 10px;
+}
+
+#content {
+	display: table;
+}
+
+	#mainContent {
+		display: table-cell;
+		width: 620px;
+		padding-right: 22px;
+	}
+	
+	aside {
+		display: table-cell;
+		width: 300px;
+		background: url("../0211_img/img/sidebar_background.png") top left;
+	}
+
+
+.blogPost header p, .blogPost header p a {
+		font-size: 14px;
+		font-style: italic;
+		color: #777;
+	}
+	
+		.blogPost header p a:hover {
+			text-decoration: none;
+			color: #000;
+		}
+
+.blogPost div {
+	/* Column-count not implemented yet */
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	
+	/* Column-gap not implemented yet */
+	-moz-column-gap: 22px;
+	-webkit-column-gap: 22px;
+}
+	
+.blogPost img {
+	margin: 22px 0;
+	-webkit-box-shadow: 3px 3px 7px #777;
+}
+
+
+#actors {
+	margin-top: 21px;
+	padding-top: 22px;
+	border-top: 1px solid #d7d7d7;
+}
+
+	#actors article {
+		display: table;
+		padding: 22px;
+	}
+	
+	#actors article:nth-child(odd) {
+		padding: 21px;
+		background: #E3E3E3;
+		border: 1px solid #d7d7d7;
+		-moz-border-radius: 11px;
+		-webkit-border-radius: 11px;
+	}
+	
+		#actors article header {
+			display: table-cell;
+			width: 220px;
+			padding-right: 22px;
+		}
+		
+			#actors article header a {
+				display: block;
+				font-weight: bold;
+				color: #000;
+			}
+			
+				#actors article header a:hover {
+					text-decoration: none;
+				}
+		
+		#actors article p {
+			padding: 0;
+		}
+
+
+aside section {
+	margin: 22px 0 0 22px;
+	padding: 11px 22px;
+	background: url("../0211_img/img/sidebar_section_background.png") repeat-x;
+	
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+
+	aside section ul {
+		margin: 0 0 0 22px;
+		list-style: none;
+	}
+	
+		aside section ul li a {
+			display: block;
+			text-decoration: none;
+			color: #000;
+		}
+		
+			aside section ul li a:hover {
+				text-decoration: underline;
+			}
+
+
+
+
+footer {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #222;
+}
+
+	footer div {
+		display: table;
+		margin: 0 auto;
+		padding: 10px 0;
+		width: 940px;
+		height: 70px;
+		color: #777;
+	}
+	
+		footer div section {
+			display: table-cell;
+			width: 300px;
+		}
+		
+		footer div #about, footer div #security {
+			padding-right: 20px;
+		}
+		
+	footer h3 {
+		color: #FFF;
+	}
+	
+	footer a {
+		color: #999;
+	}
+	
+		footer a:hover {
+			color: #FFF;
+			text-decoration: none;
+		}
+	
+	footer ul {
+		margin: 0 0 0 40px;
+		list-style: square;
+		color: #565656;
+	}
+	
+		footer ul li a {
+			display: block;
+		}
+
+
+</style>
+</head>
+<body>
+	<header>
+		<h1>SSAFY 극장</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#" id="limovie">영화</a></li>
+			<li><a href="#">극장</a></li>
+			<li><a href="#">예매</a></li>
+			<li><a href="#">이벤트</a></li>
+			<li><img alt="sfdsf" src="../0211_img/img/rss.png"><a href="#" id="lirss">상영영화소개 RSS</a></li>
+		</ul>
+	</nav>
+	<section>
+		<div class="title">
+			<span class="title_left">
+				<div style="font-size: 20px; font-style: inherit;">무공해 힐링시네마</div>
+				<div>무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는
+					영화나, 마음을 정화시키고 치유하는 힘을 가진 영화들 ...</div>
+			</span> <span class="title_right"> <span id="kungfoo"> <img
+					src="../0211_img/img/movie_image.jpg" alt="쿵푸팬더">
+			</span>
+			</span>
+		</div>
+	</section>
+	<div id="content">
+		<div id="mainContent">
+			<section>
+				<article class="blogPost">
+					<header>
+						<h2>쿵 푸 팬 더</h2>
+						<p>
+							<strong>개 봉 </strong>&nbsp;&nbsp;
+							<time datetime="2011-05-26T23:31+01:00">2011. 5. 26</time>
+						</p>
+						<p>
+							<strong>감 독</strong> &nbsp;&nbsp;<a href="#">여 인 영</a>
+						</p>
+						<p>
+							<strong>등 급</strong>&nbsp;&nbsp; [국내] 전체 관람가
+					</header>
+					<div>
+						<p>
+							<mark>하.면.된.다 - 포.스.작.렬</mark>
+							<br /> ‘평화의 계곡’에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을 알려주어 가업을
+							잇게 하고 싶지만, 포의 관심사는 오로지 '쿵푸 마스터'. 가게 일은 뒷전으로 하고 쿵푸의 비법이 적힌 용문서의
+							전수자를 정하는 ‘무적의 5인방’ 대결을 보러 시합장을 찾은 포,
+						</p>
+
+						<img src="../0211_img/img/movie_image3.jpg"  width="320" height="240" alt="쿵푸팬더식성" />
+
+						<p>그런데 이게 웬일! 마을의 현인 우그웨이 대사부가 포를 용문서의 전수자로 점지하는 이변이 일어난다. 무적의
+							5인방은 물론 시푸 사부 역시 이 사태를 받아들이지 못하는 가운데, 용문서를 노리고 어둠의 감옥에서 탈출한 타이렁이
+							마을을 습격해오자 그를 막아야 하는 미션이 포에게 떨어지는데... 포는 쿵푸마스터로 거듭날 수 있을까? 아니...
+							포가 쿵푸를 할 수는 있을까? 똥배 안에 숨겨진 포스를 깨우기 위한 포의 도전이 시작된다!</p>
+						<video src="../0211_media/media/KungFuPanda_Sample.mp4" width="320" height="240" controls="controls">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</article>
+			</section>
+			<section id="actors">
+				<h3>배우/제작진</h3>
+				<article>
+					<header>
+						<a href="#">Jack Black</a> 팬더곰, 포 목소리 역
+					</header>
+					<p>
+						<img src="../0211_img/img/jack.jpg" alt="잭 블랙" />
+					</p>
+				</article>
+				<article>
+					<header>
+						<a href="#">Jackie Chan</a> 원숭이, 몽키 목소리 역
+					</header>
+					<p>
+						<img src="../0211_img/img/jackie.jpg" alt="성룡" />
+					</p>
+				</article>
+				<article>
+					<header>
+						<a href="#">Angelina Jolie</a> 호랑이, 타이그리스 목소리 역
+					</header>
+					<p>
+						<img src="../0211_img/img/angelina.jpg" alt="안젤리나 졸리" />
+					</p>
+				</article>
+			</section>
+		</div>
+		<aside>
+			<section>
+				<header>
+					<h3>Movies</h3>
+				</header>
+				<ul>
+					<li><a href="#">현재상영작</a></li>
+					<li><a href="#">상영예정작</a></li>
+					<li><a href="#">영화뉴스</a></li>
+					<li><a href="#">테마뉴스</a></li>
+					<li><a href="#">맥스무비 예매순위</a></li>
+				</ul>
+			</section>
+		</aside>
+	</div>
+	
+	<footer>
+		<div>
+			<section id="about">
+				<h3>About</h3>
+				<p>
+					서울 강남 역삼 멀티캠퍼스. <br /> <a href="#">ssafy@ssafy.com</a>
+				</p>
+			</section>
+			<section id="security">
+				<h3>개인정보 취급 방침</h3>
+				<ul>
+					<li><a href="#">개요</a></li>
+					<li><a href="#">문의처</a></li>
+				</ul>
+			</section>
+			<section id="notice">
+				<h3>공지사항</h3>
+				<ul>
+					<li><a href="#">오시는 길</a></li>
+					<li><a href="#">오류시 문의사항</a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+
+</body>
+</html>
