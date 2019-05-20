@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    #pad{
+        width: 30px;
+        height: 30px;
+        margin: 1px;
+        align-content: center;
+    }
+    #result{
+        width: 500px;
+        height: 300px;
+        overflow: auto;
+    }
+</style>
+<script type="text/javascript">
+    var cnt = 1;
+    function set(tag){
+        var txt = document.getElementById("calc");
+        txt.value += tag.value;
+    }
+    function clears(){
+        console.log("clear")
+        document.getElementById("calc").value = "";
+    }
+    function calc() {
+        var txt = document.getElementById("calc").value;
+        for (var i = 0; i < txt.length-1; i++) {
+            if (txt[i] == '+' || txt[i] == '-' || txt[i] == '*' || txt[i] == '/')
+                if(txt[i+1] == '+' || txt[i+1] == '-' || txt[i+1] == '*' || txt[+1] == '/'){
+                    alert("value error!!")
+                    clears();
+                    return;
+                }
+        }
+        if(txt[txt.length-1] == '/' || txt[txt.length-1] == '+' || txt[txt.length-1] == '-' || txt[txt.length-1] == '*'){
+        	alert("value error!!")
+        	clears();
+        	return;
+        }
+        var calc_result = eval(txt);
+        var p = document.createElement("p");
+        var finalresult = document.createTextNode(cnt++ + "." + " " + txt + " = " + calc_result);
+        p.appendChild(finalresult);
+        document.getElementById("result").appendChild(p);
+        clears();
+    }
+    function enterkey(){
+        if(window.event.keyCode == 13)
+            calc();
+    }
+
+</script>
+</head>
+<body>
+    <header>
+        <input type="text" style="text-align: right;" id="calc" value="" placeholder="0.0" onkeyup="enterkey();">
+    </header>
+    <section>
+        <div>
+            <input type="button" id="pad" value="7" onclick="set(this)">
+            <input type="button" id="pad" value="8" onclick="set(this)">
+            <input type="button" id="pad" value="9" onclick="set(this)">
+            <input type="button" id="pad" value="+" onclick="set(this)">
+        </div>
+        <div>
+            <input type="button" id="pad" value="4" onclick="set(this)">
+            <input type="button" id="pad" value="5" onclick="set(this)">
+            <input type="button" id="pad" value="6" onclick="set(this)">
+            <input type="button" id="pad" value="-" onclick="set(this)">
+        </div>
+        <div>
+            <input type="button" id="pad" value="1" onclick="set(this)">
+            <input type="button" id="pad" value="2" onclick="set(this)">
+            <input type="button" id="pad" value="3" onclick="set(this)">
+            <input type="button" id="pad" value="*" onclick="set(this)">
+        </div>
+        <div>
+            <input type="button" id="pad" value="0" onclick="set(this)">
+            <input type="button" id="pad" value="CE" onclick="clears()">
+            <input type="button" id="pad" value="=" onclick="calc()">
+            <input type="button" id="pad" value="/" onclick="set(this)">
+        </div>
+    </section>
+    <footer>
+        <h1>결과이력</h1>
+        <div id="result">
+        </div>
+    </footer>
+
+
+</body>
+</html>
