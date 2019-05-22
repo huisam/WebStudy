@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영화관 상영 예매</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function calc(){
+        var money = $(':radio:checked').val();
+        var cnt = $('#person').val();
+        $('#total').val( eval(money + "*" + cnt) ); // 계산값 지정
+        if (money == "5000"){
+            $('#9000').css('text-decoration','line-through');
+            $('#5000').css('text-decoration','underline');
+        }
+        else{
+            $('#9000').css('text-decoration','underline');
+            $('#5000').css('text-decoration','line-through');
+        }
+    }
+
+    $(document).ready(function () {
+        // 기본 셋팅
+        calc();
+        // 인원 및 시간 클릭시 구현
+        $(':radio').click(calc);
+        $('#person').click(calc);
+        // 메뉴 추가버튼
+        $('#add').click(function () {
+            if ($(this).is(":checked")){
+                $('#menu').css('display','table');
+            }
+            else{
+                $('#menu').css('display','none');
+            }
+        });
+
+    });
+</script>
+</head>
+<body>
+    <header>
+        상영관<select name="movies">
+            <option value="CGV">CGV</option>
+            <option value="메가박스">메가박스</option>
+            <option value="롯데시네마">롯데시네마</option>
+        </select>
+        날짜 선택<input type="date" placeholder="연도-월-일">
+    </header>
+    <nav>
+        <fieldset>
+            <legend>시간선택</legend>
+            <input type="radio" name="time" value="5000" checked="checked">08:30
+            <input type="radio" name="time" value="9000">08:30
+            <input type="radio" name="time" value="9000">08:30
+            <input type="radio" name="time" value="9000">08:30
+            <input type="radio" name="time" value="9000">08:30
+            <input type="radio" name="time" value="9000">08:30
+        </fieldset>
+    </nav>
+    <section>
+        <div class="price">요금
+            <span id="9000">9,000</span>
+            <span id="5000">5,000</span>
+        </div>
+        <div>인원
+            <input type="number" id="person" value="1" min="0">
+        </div>
+        <div>금액
+            <input type="number" id="total" value="0" readonly>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <input type="checkbox" id="add" name="추가">추가
+        </div>
+        <div>
+            <fieldset style="display:none" id="menu">
+                <legend>옵션</legend>
+                <input type="checkbox">팝콘
+                <input type="checkbox">콜라
+            </fieldset>
+        </div>
+
+    </footer>
+
+</body>
+</html>
