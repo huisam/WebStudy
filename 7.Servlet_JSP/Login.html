@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function check(){
+		theform = document.login;
+		if(theform.ID.value == "" || theform.pass.value =="")
+			alert("모든항목이 제대로 입력되지 않았습니다!!");
+	}
+
+
+</script>
+</head>
+<body>
+	<p>로그인하여 주세요</p>
+	<form method="post" action="/WSjava_Servlet/MainServlet" name="login">
+		ID : <input type="text" name="ID"><br>
+		PASSWORD : <input type="password" name="pass">
+		<input type="submit" value="LOGIN" onclick="check()">
+	</form>
+</body>
+</html>
