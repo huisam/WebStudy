@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="tire" class="di5.KoreaTire"></bean>
+	<bean id="car" class="di5.Car">
+		<constructor-arg name="t" ref="tire"></constructor-arg>
+<!-- 매개변수가 1개일 경우 name, index 속성은 생략 가능하다
+name	: 생성자의 변수
+index	: 몇번째 변수
+ref		: 참조변수 넣을떄 
+value	: 기본형 값을 넣을때
+-->
+	</bean>
+</beans>
+<!-- di5 패키지의 Car 클래스에 기본생성자가 없어서 에러 -->
